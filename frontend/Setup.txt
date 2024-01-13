@@ -1,0 +1,22 @@
+UI Setup:
+
+# Refer https://angular.io/guide/setup-local
+
+1) In frontend folder, install angular cli
+    npm install -g @angular/cli
+
+2) Create angular project
+    ng new <my-app>
+
+3) Go to app folder and run
+    ng serve
+
+4) Install bootstrap in app folder 
+    npm install bootstrap bootstrap-icons
+
+5) Update refrences of bootstrap files in angular.json
+    Refer: https://www.freecodecamp.org/news/how-to-add-bootstrap-css-framework-to-an-angular-application/
+
+6) Install npm install @ng-bootstrap/ng-bootstrap@next for native angular support
+
+7) Update app components files and run 'npm start'
