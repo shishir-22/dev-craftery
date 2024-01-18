@@ -1,0 +1,38 @@
+<div class="home-wrapper">
+<nav class="navbar bg-dark">
+    <div class="container">
+      <a class="navbar-brand">
+        <img src="../../assets/images/logo-rectangle.png" alt="Bootstrap" width="150" height="40">
+      </a>
+    </div>
+  </nav>
+
+<div class="body-loading" [hidden]="!contentLoader">
+    <div class="text-center">
+        <div class="spinner-grow loading" role="status">
+        </div>
+      </div>
+</div>
+
+<div class="body-loaded" [hidden]="contentLoader">
+    <div class="heading">
+    <h3>
+        <span class="text-primary">Want to become </span> 
+        <small class="text-white">10x Dev?</small>
+      </h3>
+    </div>
+
+    <div class="content">
+        <p class="text-center text-white">Welcome to DevCraftery, where the worlds of development, system design, and DevOps converge.</p>
+    </div>
+
+    <div class="get-started">
+        <button type="button" class="btn btn-success">
+              Get started
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
+              </svg>
+        </button>
+    </div>
+</div>
+</div>

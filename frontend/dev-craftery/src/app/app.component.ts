@@ -15,20 +15,21 @@
 
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+
+import {HomeComponent} from './home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [HomeComponent, CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
 
   constructor(private modalService: NgbModal) {
-  }
-
-  public open(modal: any): void {
-    this.modalService.open(modal);
   }
 
 }
