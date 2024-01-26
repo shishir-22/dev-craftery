@@ -1,0 +1,25 @@
+.badge:hover {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+  }
+.badge {
+    background-color: #343a40;
+}
+
+  /* Dark theme for pagination */
+  .pagination-dark .page-item.active .page-link {
+    background-color: #343a40;
+    border-color: #343a40;
+  }
+
+  .pagination-dark .page-link {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+  }
+
+  .pagination-dark .page-link:hover {
+    background-color: #495057;
+    border-color: #495057;
+  }
