@@ -27,7 +27,8 @@
     </div>
 
     <div class="get-started">
-        <button type="button" class="btn btn-success">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal"
+         (click)="openPopup()">
               Get started
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"></path>
@@ -35,4 +36,101 @@
         </button>
     </div>
 </div>
+</div>
+
+<div
+  class="modal modal-wrapper"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}"> 
+  <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+      <div class="modal-header text-center border-0" *ngIf="signIn"> 
+        <h4 class="modal-title w-100">Sign in</h4>
+        <button type="button" class="close border-0" aria-label="Close" (click)="closePopup()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> 
+      <div class="modal-header text-center border-0" *ngIf="signUp"> 
+        <h4 class="modal-title w-100">Sign up</h4>
+        <button type="button" class="close border-0" aria-label="Close" (click)="closePopup()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> 
+
+      <div class="modal-body" *ngIf="signIn">
+        <form>
+          <div class="form-group email w-75">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Your email">
+          </div>
+          <div class="form-group password w-75">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Your password">
+            <p class="font-small link-text d-flex justify-content-end forgot-password">
+              <a href="#" class="link-text ml-1">Forgot Password?</a>
+            </p>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-cool-blues btn-rounded">SIGN IN</button>
+          </div>
+
+          <div class="text-center third-party-signin">
+            <p class="font-small">or you can sign in with</p>
+          </div>
+
+          <div class="text-center">
+            <button type="button" class="btn btn-white btn-rounded z-depth-1a waves-effect waves-light">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+  <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"></path>
+  </svg>
+            </button>
+        </div>
+        </form>
+  
+      </div> 
+
+      <div class="modal-body" *ngIf="signUp">
+        <form>
+          <div class="form-group text w-75">
+            <input type="text" class="form-control" id="username" placeholder="Username">
+          </div>
+          <div class="form-group password w-75">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group password w-75">
+            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm password">
+          </div>
+          <div class="form-group email w-75">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address">
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-cool-blues btn-rounded">SIGN UP</button>
+          </div>
+
+          <div class="text-center third-party-signin">
+            <p class="font-small">or you can sign in with</p>
+          </div>
+
+          <div class="text-center">
+            <button type="button" class="btn btn-white btn-rounded z-depth-1a waves-effect waves-light">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+  <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"></path>
+  </svg>
+            </button>
+        </div>
+        </form>
+  
+      </div> 
+      <div class="modal-footer" *ngIf="signIn"> 
+        <p class="font-small d-flex justify-content-end">Not a member? 
+          <a href="#" class="link-text ml-1 sign-up" (click)="clickSignUp()">Sign Up</a>
+        </p>
+      </div> 
+
+      <div class="modal-footer" *ngIf="signUp"> 
+        <p class="font-small d-flex justify-content-end">Have an account?
+          <a href="#" class="link-text ml-1 sign-up" (click)="clickSignIn()">Sign In</a>
+        </p>
+      </div> 
+    </div> 
+  </div> 
 </div>

@@ -46,3 +46,73 @@
         margin-top: 20em !important;
     }
 
+    input {
+        outline: 0;
+        border-width: 0 0 2px;
+        border-color: grey;
+      }
+      input:focus {
+        border-color: green;
+        outline: 1px dotted #000
+      }
+
+    .email {
+        margin: 1em 1em 1em 4em;
+    }
+
+    .password {
+        margin: 1em 1em 1em 4em;
+    }
+
+    .text {
+        margin: 1em 1em 1em 4em;
+    }
+
+    .link-text {
+        color: teal;
+    }
+
+    .forgot-password {
+        margin-top: 1em;
+    }
+
+    .sign-up {
+        margin-left: 0.5em;
+    }
+
+    .modal-wrapper {
+        margin-top: 5em;
+    }
+
+    .btn-rounded {
+        border-radius: 35px;
+    }
+
+    .btn-cool-blues {
+        background: #2193b0;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: #fff;
+        border: 3px solid #eee;
+    }
+
+    .third-party-signin {
+        margin-top: 2em;
+    }
+
+    .waves-effect {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .z-depth-1a {
+        -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+        box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    }
+    
