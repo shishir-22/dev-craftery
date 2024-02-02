@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-md-3 col-sm-12">
+        <!-- Content on the left side -->
+        <p>Left Sidebar Content</p>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="mb-2">
+            <span class="badge  m-1">Array</span>
+            <span class="badge  m-1">String</span>
+            <span class="badge  m-1">Linked List</span>
+            <span class="badge  m-1">Graphs</span>
+            <span class="badge  m-1">Heaps</span>
+            <span class="badge  m-1">Dynamic Programming</span>
+            <span class="badge  m-1">Tree</span>
+            <span class="badge  m-1">Binary Search</span>
+          </div>
+        <!-- Search Bar -->
+        <form class="form-inline mt-2 mb-4">
+            <div class="d-flex">
+                <input class="form-control mr-sm-2 m-1" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </div>
+        </form>
+
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                  <th  scope="col">Number</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Difficulty</th>
+                  <th scope="col">Tags</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of tableData">
+                  <th scope="row">{{ item.number }}</th>
+                  <td>
+                    <a  (click)="openProblem(item.number)">{{ item.title }}</a></td>
+                  <td>{{ item.difficulty }}</td>
+                  <td><span class="badge badge-secondary">{{ item.tags }}</span></td>
+                </tr>
+              </tbody>
+              
+              
+              <!-- Add more rows as needed -->
+          </table>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end pagination-dark">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12">
+        <!-- Content on the right side -->
+        <p>Right Sidebar Content</p>
+      </div>
+    </div>
+  </div>
