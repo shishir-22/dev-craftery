@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core';
+import { CodeModel } from '@ngstack/code-editor';
 
 @Component({
   selector: 'app-problem-detail',
@@ -7,7 +8,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./problem-detail.component.css']
 })
 export class ProblemDetailComponent {
-  editorOptions = {theme: 'vs-dark', language: 'javascript'};
-  code: string= 'function x() {\nconsole.log("Hello world!");\n}';
+  theme = 'vs-dark';
+
+  model: CodeModel = {
+    language: 'python',
+    uri: 'main.py',
+    value: '{}',
+  };
+
+  options = {
+    contextmenu: true,
+    minimap: {
+      enabled: true,
+    },
+  };
+
+  onCodeChanged(value: any) {
+    console.log('CODE', value);
+  }
 
 }
