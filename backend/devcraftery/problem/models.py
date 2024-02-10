@@ -20,6 +20,9 @@ class Problem(models.Model):
 
     class Meta:
         db_table = "problem"
+    @property
+    def tag_details(self):
+        return self.problemtagdetails_set.all()
 
 
 class ProblemTagDetails(models.Model):
