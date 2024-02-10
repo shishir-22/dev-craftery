@@ -7,7 +7,7 @@ from problem.serializer import ProblemSerializer, SubmitSerializer
 
 
 class ProblemViewSet(viewsets.ModelViewSet):
-    queryset = Problem.objects.all().order_by('created_on')
+    queryset = Problem.objects.all().order_by('id')
     serializer_class = ProblemSerializer
     permission_classes = [permissions.AllowAny]
 

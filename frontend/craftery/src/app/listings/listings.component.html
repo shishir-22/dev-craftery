@@ -34,9 +34,9 @@
               </thead>
               <tbody>
                 <tr *ngFor="let item of tableData">
-                  <th scope="row">{{ item.number }}</th>
+                  <th scope="row">{{ item.id }}</th>
                   <td>
-                    <a  (click)="openProblem(item.number)">{{ item.title }}</a></td>
+                    <a  (click)="openProblem(item.id)">{{ item.title }}</a></td>
                   <td>{{ item.difficulty }}</td>
                   <td><span class="badge badge-secondary">{{ item.tags }}</span></td>
                 </tr>

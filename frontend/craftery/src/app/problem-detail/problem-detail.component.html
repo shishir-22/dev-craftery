@@ -1,74 +1,83 @@
-
 <div class="container mt-4">
-    <!-- Row 1 -->
-    <div class="row">
-      <!-- Column 1 -->
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5>Problem Description</h5>
-          </div>
-          <div class="card-body">
-            <!-- Problem Description Content Goes Here -->
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...
-          </div>
+  <!-- Row 1 -->
+  <div class="row">
+    <!-- Column 1 -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Problem Description</h5>
         </div>
-      </div>
-  
-      <!-- Column 2 -->
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5>Code Editor</h5>
-          </div>
-          <div class="card-body">
-            <!-- Code Editor Content Goes Here -->
-            <select class="form-control mb-3">
-              <option value="python">Python</option>
-              <option value="cpp">C++</option>
-            </select>
-            <ngs-code-editor [theme]="theme" [codeModel]="model" [options]="options" (valueChanged)="onCodeChanged($event)"></ngs-code-editor>
-          </div>
+        <div class="card-body">
+          <!-- Problem Description Content -->
+          <p>{{ problemDetails.description.statement }}</p>
+          <hr>
+          <!-- Display difficulty -->
+          <p><strong>Difficulty: </strong> <span class="badge bg-primary">{{ problemDetails.difficulty }}</span></p>
+          <p><strong>Tags: </strong>
+            <ng-container *ngFor="let tag of problemDetails.tag_details">
+              <span class="badge bg-primary mr-1">{{ tag }}</span>
+            </ng-container>
+          </p>
+          <p><strong>Created By: </strong> {{ problemDetails.created_by }}</p>
         </div>
       </div>
     </div>
-  
-    <!-- Row 2 -->
-    <div class="row mt-4">
-      <!-- Column 1 -->
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5>Problem Sample Input/Output</h5>
-          </div>
-          <div class="card-body">
-            <!-- Sample Input/Output Content Goes Here -->
-            <pre>
-  Input:
-  2
-  5 3
-  Output:
-  8
-            </pre>
-          </div>
+
+    <!-- Column 2 -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Code Editor</h5>
         </div>
-      </div>
-  
-      <!-- Column 2 -->
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h5>Code Output</h5>
-          </div>
-          <div class="card-body">
-            <!-- Code Output Content Goes Here -->
-            <pre>
-  8
-            </pre>
-          </div>
+        <div class="card-body">
+          <!-- Code Editor Content -->
+          <select class="form-control mb-3">
+            <option value="python">Python</option>
+            <option value="cpp">C++</option>
+          </select>
+          <ngs-code-editor [theme]="theme" [codeModel]="model" [options]="options" (valueChanged)="onCodeChanged($event)"></ngs-code-editor>
         </div>
       </div>
     </div>
   </div>
   
-  
+  <!-- Row 2 -->
+  <div class="row mt-4">
+    <!-- Column 1 -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Problem Sample Input/Output</h5>
+        </div>
+        <div class="card-body">
+          <!-- Sample Input/Output Content -->
+          <ng-container *ngFor="let sample of problemDetails.description.sample_input">
+            <div class="col-md-6">
+              <h6>Input</h6>
+              <pre>{{ sample.input }}</pre>
+            </div>
+            <!-- Output Column -->
+            <div class="col-md-6">
+              <h6>Output</h6>
+              <pre>{{ sample.output }}</pre>
+            </div>
+            <hr>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Code Output</h5>
+        </div>
+        <div class="card-body">
+          <!-- Code Output Content -->
+          <pre>Output</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

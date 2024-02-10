@@ -26,6 +26,6 @@ class ProblemSerializer(serializers.ModelSerializer):
         return problem
 
 
-class SubmitSerializer(serializers.Serializer, ABC):
+class SubmitSerializer(serializers.Serializer):
     language = serializers.CharField(max_length=100)
     code = serializers.CharField()

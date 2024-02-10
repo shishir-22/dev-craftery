@@ -1,6 +1,6 @@
-import { Component, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-listings',
@@ -8,12 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./listings.component.css']
 })
 export class ListingsComponent {
-  constructor(private router: Router) {}
-  tableData = [
-    { number: 1, title: 'Sample Title 1', difficulty: 'Easy', tags: ['Tag A'] },
-    { number: 2, title: 'Sample Title 2', difficulty: 'Medium', tags: ['Tag B'] },
+  constructor(private router: Router, private appService: AppService) {}
+   tableData= [
+    { id: 1, title: 'Sample Title 1', difficulty: 'Easy', tags: ['Tag A'] },
+    { id: 2, title: 'Sample Title 2', difficulty: 'Medium', tags: ['Tag B'] },
     // Add more data as needed
   ];
+  ngOnInit(){
+    this.appService.getProblems().subscribe((result) => {
+
+      this.tableData = result
+    })
+
+  }
 
   openProblem(id: any):any{
     console.log(`Title clicked for problem ${id}`);
