@@ -22,6 +22,9 @@ class CodeSubmissionAPIView(APIView):
         code = serializer.validated_data['code']
         print(code)
 
+        # This code will now to redis
+        # Redis will submit the code to a python process where we will decide which image to use (Python, C++)
+
         # Perform any necessary validation on the code
 
         # Execute the code (optional)

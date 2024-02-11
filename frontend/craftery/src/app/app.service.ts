@@ -29,6 +29,11 @@ import { Observable, tap } from "rxjs";
           );
       }
 
+      submitCode(model:any): Observable<any> {
+        let requestBody = {'code': model.value, 'language': model.language }
+        return this.http.post(this.config.getConfigByKey(this.base_url) + '/submit-code/' , requestBody)
+      }
+
 
 
 

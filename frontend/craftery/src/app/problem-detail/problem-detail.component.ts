@@ -30,7 +30,6 @@ export class ProblemDetailComponent {
   };
 
   onCodeChanged(value: any) {
-    console.log('CODE', value);
   }
 
   ngOnInit() {
@@ -49,6 +48,14 @@ export class ProblemDetailComponent {
         this.problemDetails.tag_details = this.problemDetails.tag_details.map((tag: { tag_name: any; }) => tag.tag_name);
     })
 
+  }
+
+  submitCode() {
+      console.log(this.model.value);
+
+      this.appService.submitCode(this.model).subscribe((result) => {
+        console.log('Result')
+      })
   }
 
 }
